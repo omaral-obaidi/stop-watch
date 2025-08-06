@@ -1,18 +1,18 @@
-const button = document.getElementById("button");
+const stopStart = document.getElementById("button");
 const watch = document.getElementById("watch");
 const reset = document.getElementById("reset")
 let timeSeconds = 0;
 let isRunning = false;
 let interval = null;
 
-button.addEventListener("click", function () {
+stopStart.addEventListener("click", function () {
   if (!isRunning) {
     startTimer();
-    button.textContent = "Stop";
+    stopStart.textContent = "Stop";
     isRunning = true;
   } else {
     stopTimer();
-    button.textContent = "Start";
+    stopStart.textContent = "Start";
     isRunning = false;
   }
 });
@@ -41,7 +41,7 @@ function resetTimer() {
   stopTimer();
   timeSeconds = 0;
   updateDisplay();
-  button.textContent = "Start";
+  stopStart.textContent = "Start";
   isRunning = false;
 }
 
